@@ -1,5 +1,18 @@
 import * as React from "react"
+import { Link } from "gatsby"
+import Footer from "../components/footer"
+import Header from "../components/Header"
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <>
+      <Header />
+      <div>
+        <h1>Yixin Zhang</h1>
+        <h2>Im a front end developer!</h2>
+        <p>Need a developer? <Link to="/contact">Contact Me</Link></p>
+      </div>
+      <Footer />
+    </>
+  )
 }
