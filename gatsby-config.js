@@ -8,6 +8,10 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  siteMetadata: {
+    title: 'Gatsby App Practice!',
+    author: 'Yixin Zhang'
+  },
   plugins: [
     'gatsby-plugin-sass'
   ],
