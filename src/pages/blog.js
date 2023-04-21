@@ -1,10 +1,10 @@
 import React from "react";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
-import { graphql, useStaticQuery } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 
-export default function Blog() {
+export default function BlogPage() {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -16,6 +16,9 @@ export default function Blog() {
             }
             html
             excerpt
+            fields {
+              slug
+            }
           }
         }
       }
@@ -30,7 +33,7 @@ export default function Blog() {
         {data.allMarkdownRemark.edges.map(edge => {
           return (
             <li>
-              <h2>{edge.node.frontmatter.title}</h2>
+              <h2><Link to={`/blog/${edge.node.fields.slug}`}>{edge.node.frontmatter.title}</Link></h2>
               <p>{edge.node.frontmatter.date}</p>
             </li>
           );
