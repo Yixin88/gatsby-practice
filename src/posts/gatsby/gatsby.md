@@ -5,6 +5,8 @@ date: "20-04-2023"
 
 I currently learning Gatsby!
 
+![Grass](./grass.jpg)
+
 ## Topic Covered
 
 1. Gatsby
