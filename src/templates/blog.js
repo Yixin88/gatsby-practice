@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
-
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 // export const query = graphql`
 //   query (
@@ -27,6 +27,9 @@ export const query = graphql`
     contentfulBlogPost(slug: {eq : $slug}) {
       title
       publishedDate(formatString: "Do MMMM, YYYY")
+      body {
+        raw
+      }
     }
   }
 `
@@ -37,6 +40,7 @@ export default function Blog(props) {
     <Layout>
       <h1>{props.data.contentfulBlogPost.title}</h1>
       <p>{props.data.contentfulBlogPost.publishedDate}</p>
+      <p>{props.data.contentfulBlogPost.body.raw}</p>
     </Layout>
   )
 }
