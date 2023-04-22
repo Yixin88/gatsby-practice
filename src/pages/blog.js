@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Layout from "../components/Layout";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import * as blogStyles from './blog.module.scss'
+import Head from "../components/head"
 
 export default function BlogPage() {
   const data = useStaticQuery(graphql`
@@ -25,6 +26,7 @@ export default function BlogPage() {
 
   return (
     <Layout>
+      <Head title='Blog' />
       <h1>This is a blog page</h1>
       <h2>Posts will show up here later on.</h2>
       <ol className={blogStyles.post}>
